@@ -5,7 +5,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='bg-primary'>
+        <div className='bg-primary py-2'>
             <div className="navbar main-container bg-primary">
                 <div className="navbar-start">
                     <div className="dropdown">
