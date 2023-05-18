@@ -29,7 +29,7 @@ const HomeProductTabs = () => {
             </div>
 
 
-            <div className="grid grid-cols-3 gap-12 my-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
                 {products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)}
             </div>
 

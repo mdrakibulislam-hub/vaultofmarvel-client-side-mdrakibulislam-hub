@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Rating = ({ children }) => {
     const userRating = Math.round(children)
     console.log(userRating);
@@ -14,5 +12,4 @@ const Rating = ({ children }) => {
         </div>
     );
 };
-
 export default Rating;
