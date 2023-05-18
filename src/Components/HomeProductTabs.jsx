@@ -16,7 +16,7 @@ const HomeProductTabs = () => {
 
     return (
         <>
-            <h1 className="font-semibold text-center text-4xl text-primary my-12">See Product By Category</h1>
+            <h1 className="font-semibold text-center text-4xl text-primary my-12">Explore our leatest movie action figures</h1>
 
 
             <div className="grid place-content-center">

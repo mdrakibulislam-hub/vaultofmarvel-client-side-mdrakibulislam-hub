@@ -5,6 +5,9 @@ import HomeProductTabs from "../../Components/HomeProductTabs";
 
 const Home = () => {
 
+    useEffect(() => {
+        document.title = "Homepage | Vault of marvel"
+    }, [])
 
     return (
         <div className="main-container">
