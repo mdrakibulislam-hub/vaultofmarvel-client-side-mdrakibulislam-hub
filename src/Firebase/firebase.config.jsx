@@ -4,11 +4,11 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-console.log(import.meta.env.VITE_AUTHDOMAIN);
+console.log(import.meta.env.VITE_APIKEY);
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_APIKEY,
+    apiKey: "AIzaSyCU7KePJYJfYGg_30z0cGxfjE9sfiRX88w",
     authDomain: import.meta.env.VITE_AUTHDOMAIN,
     projectId: import.meta.env.VITE_PROJECTID,
     storageBucket: import.meta.env.VITE_STORAGEBUCKET,
