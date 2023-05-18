@@ -24,7 +24,7 @@ const ProductDetailsPage = () => {
                         <p>Sold by: {seller} </p>
                         <p>Mail: {email}</p>
                         <p>Sub-category: {subCategory}</p>
-                        <p>Price: {price}</p>
+                        <p>Price: {price}$</p>
                         <div className='flex gap-2'>Rating: <Rating>{rating}</Rating> {rating}</div>
                         <p>Quantity: {quantity}</p>
                         <p>Description: {description}</p>
