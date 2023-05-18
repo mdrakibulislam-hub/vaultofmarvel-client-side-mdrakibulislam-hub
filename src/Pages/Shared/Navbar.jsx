@@ -29,10 +29,11 @@ const Navbar = () => {
                         <li><Link to="">My Toys</Link></li>
                         <li><Link to="/addproduct">Add A Toy</Link></li>
                         <li><Link to="">Blogs</Link></li>
+                        <li><Link to="/signup">Sign up</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn border-none bg-white hover:bg-warning text-neutral">Login</a>
+                    <Link to="/login" className="btn border-none bg-white hover:bg-warning text-neutral">Login</Link>
                 </div>
             </div>
         </div>

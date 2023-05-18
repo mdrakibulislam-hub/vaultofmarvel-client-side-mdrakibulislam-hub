@@ -1,8 +1,11 @@
 import { Result } from "postcss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AddProductPage = () => {
 
+    useEffect(() => {
+        document.title = "Add new product | Vault of marvel"
+    }, [])
 
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
