@@ -31,13 +31,13 @@ const UpdateModal = ({ _id, productName, control, setControl }) => {
 
                     <h1 className='font-semibold text-center text-2xl text-primary'>Update details of {productName}</h1>
 
-                    <input required onChange={e => setPrice(e.target.value)} type="number" name="email" placeholder="Type toys price here" className="input input-bordered w-full" />
+                    <input onChange={e => setPrice(e.target.value)} type="number" name="email" placeholder="Type toys price here" className="input input-bordered w-full" />
 
 
-                    <input required onChange={e => setQuantity(e.target.value)} type="number" name="quantity" placeholder="Type available quantity here (1-5)" className="input input-bordered w-full" />
+                    <input onChange={e => setQuantity(e.target.value)} type="number" name="quantity" placeholder="Type available quantity here (1-5)" className="input input-bordered w-full" />
 
 
-                    <input required onChange={e => setDescription(e.target.value)} type="text" name="description" placeholder="Type toys description here" className="input input-bordered w-full" />
+                    <input onChange={e => setDescription(e.target.value)} type="text" name="description" placeholder="Type toys description here" className="input input-bordered w-full" />
 
 
                     <button onClick={handleUpdate} className='btn border-none bg-primary text-white hover:bg-warning hover:text-neutral w-1/2 mx-auto'>Update details</button>

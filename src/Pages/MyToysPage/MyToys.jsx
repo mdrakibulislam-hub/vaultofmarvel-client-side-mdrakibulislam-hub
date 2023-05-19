@@ -28,6 +28,9 @@ const MyToys = () => {
     return (
 
         <div className="overflow-x-auto main-container">
+
+            <button className='btn border-none bg-primary text-white hover:bg-warning hover:text-neutral mx-auto my-4'>Sort by Price</button>
+
             <table className="table w-full rounded-none">
                 {/* head */}
                 <thead>
