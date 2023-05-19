@@ -8,6 +8,8 @@ const MyToys = () => {
 
     const { loading, user } = useContext(AuthContext);
 
+    const [control, setControl] = useState(true);
+
 
     console.log(user.email);
 
@@ -16,7 +18,7 @@ const MyToys = () => {
         fetch(`http://localhost:5000/alltoys?email=${user.email}`)
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [user])
+    }, [user, control])
 
     useEffect(() => {
         document.title = `My toys | Vault of marvel`
@@ -38,7 +40,7 @@ const MyToys = () => {
                 <tbody>
                     {/* row */}
 
-                    {products.map(product => <TableRow key={product._id} product={product}></TableRow>)}
+                    {products.map(product => <TableRow key={product._id} product={product} control={control} setControl={setControl}></TableRow>)}
 
                 </tbody>
 

@@ -1,8 +1,23 @@
 import React from 'react';
 
-const TableRow = ({ product }) => {
+const TableRow = ({ product, control, setControl }) => {
 
     const { _id, image, name, seller, email, subCategory, price, rating, quantity, description } = product;
+
+
+
+
+    const handleDelete = () => {
+        fetch(`http://localhost:5000/alltoys/toys/${_id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then((result) => {
+                console.log(result);
+                setControl(!control)
+
+            })
+    }
 
 
     return (
@@ -28,7 +43,7 @@ const TableRow = ({ product }) => {
             </td>
             <td><button className="btn bg-warning border-none text-black hover:text-white btn-xs">↑ Update</button></td>
             <th>
-                <button className="btn bg-primary text-white border-none btn-xs">X Delete</button>
+                <button onClick={handleDelete} className="btn bg-primary text-white border-none btn-xs">X Delete</button>
             </th>
         </tr>
     );
