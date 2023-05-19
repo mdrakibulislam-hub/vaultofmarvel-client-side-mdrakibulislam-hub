@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from '../../Components/ProductCard';
 import { AuthContext } from '../../Provider/AuthProvider';
+import TableRow from '../../Components/TableRow';
 
 const MyToys = () => {
     const [products, setProducts] = useState([]);
@@ -23,13 +24,28 @@ const MyToys = () => {
 
     return (
 
+        <div className="overflow-x-auto main-container">
+            <table className="table w-full rounded-none">
+                {/* head */}
+                <thead>
+                    <tr>
+                        <th>Name & Price</th>
+                        <th>Category and Seller</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* row */}
 
-        <div className="main-container">
-            <h1 className="font-semibold text-4xl text-primary my-12">All product</h1>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
-                {products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)}
-            </div>
-        </div>)
+                    {products.map(product => <TableRow key={product._id} product={product}></TableRow>)}
+
+                </tbody>
+
+
+            </table>
+        </div>
+    )
 };
 
 export default MyToys;
