@@ -48,14 +48,14 @@ const TableRow = ({ product, control, setControl }) => {
                     <br />
                     <span className="badge badge-ghost badge-sm">{seller}</span>
                 </td>
-                <td><label htmlFor={`my-modal-${_id}`} className="btn bg-warning border-none text-black hover:text-white btn-xs">↑ Update</label></td>
+                <td><><label htmlFor={`my-modal-${_id}`} className="btn bg-warning border-none text-black hover:text-white btn-xs">↑ Update</label></></td>
                 <th>
                     <button onClick={handleDelete} className="btn bg-primary text-white border-none btn-xs">X Delete</button>
                 </th>
             </tr>
 
 
-            <UpdateModal _id={_id} productName={name}></UpdateModal>
+            <UpdateModal _id={_id} productName={name} control={control} setControl={setControl}></UpdateModal>
 
         </>
     );

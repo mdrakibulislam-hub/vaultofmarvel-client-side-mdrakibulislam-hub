@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const UpdateModal = ({ _id, productName }) => {
+const UpdateModal = ({ _id, productName, control, setControl }) => {
 
 
     const [price, setPrice] = useState("");
     const [quantity, setQuantity] = useState("");
     const [description, setDescription] = useState("");
 
-    console.log(name);
+    const handleUpdate = () => {
+        const updateData = { price, quantity, description }
+        fetch(`http://localhost:5000/update/${_id}`, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(updateData)
+        })
+            .then(res => res.json())
+            .then(result => { console.log(result); setControl(!control) })
+    }
 
     return (
         <>
@@ -29,7 +40,7 @@ const UpdateModal = ({ _id, productName }) => {
                     <input required onChange={e => setDescription(e.target.value)} type="text" name="description" placeholder="Type toys description here" className="input input-bordered w-full" />
 
 
-                    <button className='btn border-none bg-primary text-white hover:bg-warning hover:text-neutral w-1/2 mx-auto'>Update details</button>
+                    <button onClick={handleUpdate} className='btn border-none bg-primary text-white hover:bg-warning hover:text-neutral w-1/2 mx-auto'>Update details</button>
 
 
 
