@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import PrivetRoute from "./PrivetRoute";
+import MyToys from "../Pages/MyToysPage/MyToys";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
             { "path": "/", element: <Home></Home> },
             { "path": "/product/details/:id", element: <PrivetRoute><ProductDetailsPage></ProductDetailsPage></PrivetRoute>, loader: (req, res) => fetch(`http://localhost:5000/alltoys/toys/${req.params.id}`) },
             { "path": "/alltoys", element: <AllProducts></AllProducts> },
+            { "path": "/mytoys", element: <PrivetRoute><MyToys></MyToys></PrivetRoute> },
             { "path": "/addproduct", element: <PrivetRoute><AddProductPage></AddProductPage></PrivetRoute> },
             { "path": "/login", element: <Login></Login> },
             { "path": "/signup", element: <Registration></Registration> },

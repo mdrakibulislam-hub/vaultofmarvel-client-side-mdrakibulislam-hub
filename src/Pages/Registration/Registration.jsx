@@ -1,9 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Registration = () => {
+
+    useEffect(() => {
+        document.title = "Sign up | Vault of marvel"
+    }, [])
 
     const navigate = useNavigate();
 
@@ -83,7 +87,7 @@ const Registration = () => {
                                 type="text"
                                 id='name'
                                 name='name'
-                                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             />
                             <p className='text-red-700'><small>
                                 {nameError ? nameError : ""}
@@ -103,7 +107,7 @@ const Registration = () => {
                                 type="email"
                                 id='email'
                                 name='email'
-                                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             />
                             <p className='text-red-700'><small>
                                 {emailError ? emailError : ""}
@@ -123,7 +127,7 @@ const Registration = () => {
                                 type="password"
                                 id='password'
                                 name='password'
-                                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             />
 
                             <p className='text-red-700'><small>
@@ -147,7 +151,7 @@ const Registration = () => {
                                 type="password"
                                 id='confirm-password'
                                 name='confirmPassword'
-                                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             />
 
                             <p className='text-red-700'><small>
@@ -171,7 +175,7 @@ const Registration = () => {
                                 type="text"
                                 id='photourl'
                                 name='photourl'
-                                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                             />
 
                             <p className='text-red-700'><small>

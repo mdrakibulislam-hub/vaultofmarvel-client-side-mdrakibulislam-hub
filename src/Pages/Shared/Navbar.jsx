@@ -35,10 +35,10 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1 text-white">
                         <li><Link to="">Home</Link></li>
                         <li><Link to="/alltoys">All Toys</Link></li>
-                        <li><Link to="">My Toys</Link></li>
+                        <li><Link to="/mytoys">My Toys</Link></li>
                         <li><Link to="/addproduct">Add A Toy</Link></li>
                         <li><Link to="">Blogs</Link></li>
-                        <li><Link to="/signup">Sign up</Link></li>
+                        <li>{user ? "" : <Link to="/signup">Sign up</Link>}</li>
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-2">

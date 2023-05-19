@@ -1,8 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 const ForgetPassword = () => {
+
+    useEffect(() => {
+        document.title = "Reset Password | Vault of marvel"
+    }, [])
 
 
     const { handleForgetPasswordReset } = useContext(AuthContext);
