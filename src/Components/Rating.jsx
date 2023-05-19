@@ -1,6 +1,5 @@
 const Rating = ({ children }) => {
     const userRating = Math.round(children)
-    console.log(userRating);
     return (
         <div>
             {userRating === 5 ? <>⭐⭐⭐⭐⭐</>
