@@ -1,4 +1,5 @@
 import React from 'react';
+import UpdateModal from './UpdateModal';
 
 const TableRow = ({ product, control, setControl }) => {
 
@@ -41,10 +42,13 @@ const TableRow = ({ product, control, setControl }) => {
                 <br />
                 <span className="badge badge-ghost badge-sm">{seller}</span>
             </td>
-            <td><button className="btn bg-warning border-none text-black hover:text-white btn-xs">↑ Update</button></td>
+            <td><label htmlFor="my-modal-4" className="btn bg-warning border-none text-black hover:text-white btn-xs">↑ Update</label></td>
             <th>
                 <button onClick={handleDelete} className="btn bg-primary text-white border-none btn-xs">X Delete</button>
             </th>
+
+            <UpdateModal></UpdateModal>
+
         </tr>
     );
 };
