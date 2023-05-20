@@ -44,7 +44,7 @@ const MyToys = () => {
 
             <button onClick={sortHandler} className='btn border-none bg-primary text-white hover:bg-warning hover:text-neutral mx-auto my-4'>Sort by Price</button>
 
-            <table className="table w-full rounded-none">
+            <table className="table w-full rounded-none my-8">
                 {/* head */}
                 <thead>
                     <tr>

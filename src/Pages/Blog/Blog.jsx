@@ -35,7 +35,7 @@ const Blog = () => {
         <div className='main-container'>
             <h1 className="font-semibold text-center text-4xl text-primary my-12">Some qustion and answars about web devlopment</h1>
 
-            <div className='grid gap-4'>
+            <div className='grid gap-4 my-8'>
                 {
                     blogs.map(blog => <BlogsCard key={blog._id} blog={blog}></BlogsCard>)
                 }

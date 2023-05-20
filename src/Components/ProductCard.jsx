@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
 
     return (
         <div data-aos="fade-up"
-            data-aos-anchor-placement="bottom-bottom" className='border-2 border-gray-300 p-4 rounded-md flex flex-col gap-2'>
+            data-aos-anchor-placement="bottom-bottom" className='border-2 border-red-200 p-4 rounded-md flex flex-col gap-2'>
             <img className='rounded-md' src={image} alt="" />
             <h1 className='font-semibold text-2xl text-primary'>{name}</h1>
             <p className='text-xl'>Price: <span className='font-bold'>{price}$</span></p>
