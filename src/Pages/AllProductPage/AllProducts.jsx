@@ -21,7 +21,7 @@ const AllProducts = () => {
     useEffect(() => {
         fetch("http://localhost:5000/alltoys")
             .then(res => res.json())
-            .then(data => { setProducts(data); setLoading(false) })
+            .then(data => { setProducts(data.slice(0, 19)); setLoading(false) })
     }, [])
 
 
@@ -32,6 +32,13 @@ const AllProducts = () => {
             .then(res => res.json())
             .then(data => { setProducts(data), setLoading(false) })
 
+    }
+
+    const seeAllHandler = () => {
+        setLoading(true)
+        fetch(`http://localhost:5000/alltoys`)
+            .then(res => res.json())
+            .then(data => { setProducts(data); setLoading(false) })
     }
 
 
@@ -67,7 +74,7 @@ const AllProducts = () => {
 
             {/* card showed on tabular format bellow */}
 
-            <table className="table w-full rounded-none">
+            <table className="table w-full rounded-none overflow-scroll">
                 {/* head */}
                 <thead>
                     <tr>
@@ -86,7 +93,7 @@ const AllProducts = () => {
 
             </table>
 
-
+            {products.length <= 20 && <div className="grid place-content-center"><button onClick={seeAllHandler} className="btn border-none bg-primary text-white hover:bg-warning hover:text-neutral my-8">See All</button></div>}
 
         </div>
     );

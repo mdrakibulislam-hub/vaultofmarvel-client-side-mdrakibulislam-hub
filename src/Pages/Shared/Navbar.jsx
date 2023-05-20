@@ -23,10 +23,11 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to="">Home</Link></li>
-                            <li><Link to="">All Toys</Link></li>
-                            <li><Link to="">My Toys</Link></li>
-                            <li><Link to="">Add A Toy</Link></li>
-                            <li><Link to="">Blogs</Link></li>
+                            <li><Link to="/alltoys">All Toys</Link></li>
+                            <li><Link to="/mytoys">My Toys</Link></li>
+                            <li><Link to="/addproduct">Add A Toy</Link></li>
+                            <li><Link to="/blog">Blogs</Link></li>
+                            <li>{user ? "" : <Link to="/signup">Sign up</Link>}</li>
                         </ul>
                     </div>
                     <Link to="/" className="max-w-[10rem]"><img src={logo} alt="" /></Link>
