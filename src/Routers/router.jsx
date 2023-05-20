@@ -10,6 +10,7 @@ import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import PrivetRoute from "./PrivetRoute";
 import MyToys from "../Pages/MyToysPage/MyToys";
 import ErrorElement from "../Components/ErrorElement";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
             { "path": "/login", element: <Login></Login> },
             { "path": "/signup", element: <Registration></Registration> },
             { "path": "/forgetpassword", element: <ForgetPassword></ForgetPassword> },
+            { "path": "/blog", element: <Blog></Blog> },
         ]
     },
 ]);
