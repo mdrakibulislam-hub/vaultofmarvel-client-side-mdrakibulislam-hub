@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import LoadingSpinner from "./LoadingSpinner";
 
 const HomeProductTabs = () => {
 
+    const [loading, setLoading] = useState(true);
 
     const [products, setProducts] = useState([]);
     const [activeTab, setActiveTab] = useState("gotg")
@@ -11,8 +13,11 @@ const HomeProductTabs = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/alltoys/subcatrgory/${activeTab}`)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => { setProducts(data); setLoading(false) })
     }, [activeTab])
+
+
+    if (loading) { return (<LoadingSpinner></LoadingSpinner>) }
 
     return (
         <>

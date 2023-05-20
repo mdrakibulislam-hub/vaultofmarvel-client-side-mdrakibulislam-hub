@@ -2,9 +2,17 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { AuthContext } from '../../Provider/AuthProvider';
 import TableRow from '../../Components/TableRow';
+import LoadingSpinner from '../../Components/LoadingSpinner';
 
 
 const MyToys = () => {
+
+
+    useEffect(() => {
+        document.title = `My toys | Vault of marvel`
+    }, [])
+
+
     const [products, setProducts] = useState([]);
 
     const { loading, user } = useContext(AuthContext);
@@ -21,9 +29,7 @@ const MyToys = () => {
             .then(data => setProducts(data))
     }, [user, control])
 
-    useEffect(() => {
-        document.title = `My toys | Vault of marvel`
-    }, [])
+    if (loading) { return (<LoadingSpinner></LoadingSpinner>) }
 
     return (
 
@@ -53,6 +59,9 @@ const MyToys = () => {
 
         </div>
     )
+
+
+
 };
 
 export default MyToys;

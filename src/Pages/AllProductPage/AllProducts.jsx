@@ -3,6 +3,7 @@ import ProductCard from "../../Components/ProductCard";
 import { FaSearch } from "react-icons/fa";
 import TableRow from "../../Components/TableRow";
 import AllToysTableRow from "../../Components/AllToysTableRow";
+import LoadingSpinner from "../../Components/LoadingSpinner";
 
 
 const AllProducts = () => {
@@ -11,6 +12,8 @@ const AllProducts = () => {
         document.title = `All toys | Vault of marvel`
     }, [])
 
+    const [loading, setLoading] = useState(true);
+
     const [products, setProducts] = useState([]);
     const [searchtext, setSearchText] = useState("");
 
@@ -18,7 +21,7 @@ const AllProducts = () => {
     useEffect(() => {
         fetch("http://localhost:5000/alltoys")
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => { setProducts(data); setLoading(false) })
     }, [])
 
 
@@ -27,9 +30,12 @@ const AllProducts = () => {
 
         fetch(`http://localhost:5000/alltoys/search/${searchtext}`)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => { setProducts(data), setLoading(false) })
 
     }
+
+
+    if (loading) { return (<LoadingSpinner></LoadingSpinner>) }
 
 
     return (
