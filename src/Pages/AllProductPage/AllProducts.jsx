@@ -4,7 +4,13 @@ import { FaSearch } from "react-icons/fa";
 
 
 const AllProducts = () => {
+
+    useEffect(() => {
+        document.title = `All toys | Vault of marvel`
+    }, [])
+
     const [products, setProducts] = useState([]);
+    const [searchtext, setSearchText] = useState("");
 
 
     useEffect(() => {
@@ -13,9 +19,17 @@ const AllProducts = () => {
             .then(data => setProducts(data))
     }, [])
 
-    useEffect(() => {
-        document.title = `All toys | Vault of marvel`
-    }, [])
+
+    const searchHandler = (event) => {
+        event.preventDefault()
+        console.log(searchtext);
+
+        fetch(`http://localhost:5000/alltoys/search/${searchtext}`)
+            .then(res => res.json())
+            .then(data => setProducts(data))
+
+    }
+
 
     return (
 
@@ -27,12 +41,12 @@ const AllProducts = () => {
 
                 <h1 className="font-semibold text-4xl text-primary my-12">All product</h1>
 
-                <div className="flex items-center gap-2">
+                <form onSubmit={searchHandler} className="flex items-center gap-2">
 
-                    <input className="px-4 py-3 text-black bg-white border rounded-md focus:border-red-400 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Enter product name here" type="text" name="searchtext" id="" />
+                    <input onChange={(e) => setSearchText(e.target.value)} className="px-4 py-3 text-black bg-white border rounded-md focus:border-red-400 focus:ring-red-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Enter product name here" type="text" name="searchtext" id="" />
 
-                    <button className="btn border-none bg-primary text-white hover:bg-warning hover:text-neutral "><FaSearch></FaSearch></button>
-                </div>
+                    <button type="submit" className="btn border-none bg-primary text-white hover:bg-warning hover:text-neutral "><FaSearch></FaSearch></button>
+                </form>
             </div>
 
 
