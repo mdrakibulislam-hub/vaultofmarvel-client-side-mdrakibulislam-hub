@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Rating from './Rating';
 import { Link } from 'react-router-dom';
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const ProductCard = ({ product }) => {
+
+    useEffect(() => {
+
+        Aos.init();
+    }, [])
 
     const { _id, image, name, seller, email, subCategory, price, rating, quantity, description } = product;
 
     return (
-        <div className='border-2 border-gray-300 p-4 rounded-md flex flex-col gap-2'>
+        <div data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom" className='border-2 border-gray-300 p-4 rounded-md flex flex-col gap-2'>
             <img className='rounded-md' src={image} alt="" />
             <h1 className='font-semibold text-2xl text-primary'>{name}</h1>
             <p className='text-xl'>Price: <span className='font-bold'>{price}$</span></p>

@@ -47,11 +47,11 @@ const Navbar = () => {
                     {/* login btn starts here */}
 
 
-                    {user && <li className="tooltip tooltip-bottom" data-tip={user.displayName}>{user.photoURL ? <Link to="/userprofile"><figure className='w-14 h-fit'><img className='w-full rounded-full' src={user.photoURL && user.photoURL} alt="" /></figure></Link> : <Link to="/userprofile"><figure className='w-14 h-fit'><img className='w-full rounded-full' src="https://i.ibb.co/K798Km5/user.jpg" alt="" /></figure></Link>}</li>}
+                    {user && <li className="tooltip hidden lg:block tooltip-bottom" data-tip={user.displayName}>{user.photoURL ? <Link to="/userprofile"><figure className='w-14 h-fit'><img className='w-full rounded-full' src={user.photoURL && user.photoURL} alt="" /></figure></Link> : <Link to="/userprofile"><figure className='w-14 h-fit'><img className='w-full rounded-full' src="https://i.ibb.co/K798Km5/user.jpg" alt="" /></figure></Link>}</li>}
 
                     {user &&
 
-                        <Link className='text-white'>{user.email && user.email}</Link>
+                        <Link className='text-white hidden lg:block'>{user.email && user.email}</Link>
 
                     }
 

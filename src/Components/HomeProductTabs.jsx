@@ -44,8 +44,7 @@ const HomeProductTabs = () => {
             </div>
 
 
-            <div data-aos="fade-up"
-                data-aos-anchor-placement="bottom-bottom" className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
                 {products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)}
             </div>
 
