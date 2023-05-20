@@ -3,9 +3,9 @@ import logo from "../assets/logo.svg";
 
 const Footer = () => {
     return (
-        <div className='bg-slate-800'>
+        <div className='bg-black'>
 
-            <footer className="footer main-container py-16 bg-slate-800 text-neutral-content">
+            <footer className="footer main-container py-16 bg-black text-neutral-content">
                 <div>
                     <img className='w-1/2' src={logo} alt="" />
                     <p>MARVEL Industries Ltd.<br />&copy; Copyright Marvel since 1992</p>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import mailIcon from './../assets/mail-icon.png';
-import phoneIcon from './../assets/phone-icon.png';
+import mailIcon from './../assets/mail.svg';
+import phoneIcon from './../assets/phone.svg';
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
@@ -20,7 +20,7 @@ const ContactsSection = () => {
 
                     <h1 className='font-semibold text-primary text-3xl mb-8'>Send Us Your Feedback</h1>
 
-                    <div className='flex gap-2 items-center'>
+                    <div className='flex gap-4 items-center'>
                         <img src={mailIcon} alt="" />
                         <div>
                             <p>E-mail us</p>
@@ -28,7 +28,7 @@ const ContactsSection = () => {
                         </div>
                     </div>
 
-                    <div className='flex gap-2 items-center'>
+                    <div className='flex gap-4 items-center'>
                         <img src={phoneIcon} alt="" />
                         <div>
                             <p>Phone / WhatsApp</p>
