@@ -22,7 +22,7 @@ const HomeGallery = () => {
     return (
         <>
             <h1 className="font-semibold text-center text-4xl text-primary my-12">Our Featured Products</h1>
-            <div data-aos="fade-down" className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div data-aos="fade-up" className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 <Link to=""><img className="border-red-200 border-2 rounded-md hover:shadow-md transition-all ease-in" src={ironman} alt="" /></Link>
                 <Link to=""><img className="border-red-200 border-2 rounded-md hover:shadow-md transition-all ease-in" src={antman} alt="" /></Link>
                 <Link to=""><img className="border-red-200 border-2 rounded-md hover:shadow-md transition-all ease-in" src={blackpanther} alt="" /></Link>

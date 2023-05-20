@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BlogsCard from '../../Components/BlogsCard';
 
 const Blog = () => {
+
+
+    useEffect(() => {
+        document.title = `Blog | Vault of marvel`
+    }, [])
 
     const blogs = [
         {

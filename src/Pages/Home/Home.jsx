@@ -4,6 +4,9 @@ import banner from "../../assets/home-banner.webp"
 import HomeProductTabs from "../../Components/HomeProductTabs";
 import Aos from "aos";
 import 'aos/dist/aos.css';
+import DiscountCard from "../../Components/DiscountCard";
+import ContactsSection from "../../Components/ContactsSection";
+import UsersFeedback from "../../Components/UsersFeedback";
 
 const Home = () => {
 
@@ -20,6 +23,9 @@ const Home = () => {
                     data-aos-anchor-placement="center-bottom" className="mx-auto w-full lg:rounded-b-md" src={banner} alt="" />
                 <HomeGallery></HomeGallery>
                 <HomeProductTabs></HomeProductTabs>
+                <DiscountCard></DiscountCard>
+                <UsersFeedback></UsersFeedback>
+                <ContactsSection></ContactsSection>
             </div>
         </>
     );
