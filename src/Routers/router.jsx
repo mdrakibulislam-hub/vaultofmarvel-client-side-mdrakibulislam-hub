@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorElement></ErrorElement>,
         children: [
             { "path": "/", element: <Home></Home> },
-            { "path": "/product/details/:id", element: <PrivetRoute><ProductDetailsPage></ProductDetailsPage></PrivetRoute>, loader: (req, res) => fetch(`http://localhost:5000/alltoys/toys/${req.params.id}`) },
+            { "path": "/product/details/:id", element: <PrivetRoute><ProductDetailsPage></ProductDetailsPage></PrivetRoute>, loader: (req, res) => fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys/toys/${req.params.id}`) },
             { "path": "/alltoys", element: <AllProducts></AllProducts> },
             { "path": "/mytoys", element: <PrivetRoute><MyToys></MyToys></PrivetRoute> },
             { "path": "/addproduct", element: <PrivetRoute><AddProductPage></AddProductPage></PrivetRoute> },

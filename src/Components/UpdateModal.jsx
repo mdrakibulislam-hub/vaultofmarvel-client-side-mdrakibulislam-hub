@@ -10,7 +10,7 @@ const UpdateModal = ({ _id, productName, control, setControl }) => {
 
     const handleUpdate = () => {
         const updateData = { price, quantity, description }
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/update/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json"

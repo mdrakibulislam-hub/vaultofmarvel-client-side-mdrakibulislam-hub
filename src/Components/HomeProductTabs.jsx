@@ -18,7 +18,7 @@ const HomeProductTabs = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/alltoys/subcatrgory/${activeTab}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys/subcatrgory/${activeTab}`)
             .then(res => res.json())
             .then(data => { setProducts(data); setLoading(false) })
     }, [activeTab])

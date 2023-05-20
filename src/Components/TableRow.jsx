@@ -20,7 +20,7 @@ const TableRow = ({ product, control, setControl }) => {
 
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/alltoys/toys/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys/toys/${_id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

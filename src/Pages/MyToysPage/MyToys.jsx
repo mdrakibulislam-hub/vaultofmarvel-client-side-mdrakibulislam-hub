@@ -24,14 +24,14 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/alltoys?email=${user.email}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys?email=${user.email}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [user, control])
 
 
     const sortHandler = () => {
-        fetch(`http://localhost:5000/alltoys?email=${user.email}&sort=true`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys?email=${user.email}&sort=true`)
             .then(res => res.json())
             .then(data => { setProducts(data) })
     }

@@ -35,7 +35,7 @@ const AddProductPage = () => {
         const data = { name, image, seller, email, price, subCategory, rating, quantity, description }
         console.log(data);
 
-        fetch("http://localhost:5000/toysdata", {
+        fetch("https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/toysdata", {
             method: 'POST',
             headers: {
                 "Content-type": "application/json"
@@ -57,7 +57,7 @@ const AddProductPage = () => {
         <div className="main-container">
             <h1 className="font-semibold text-4xl text-center text-primary my-12">Add new product</h1>
 
-            <form onSubmit={handleFormSubmit} action="" className="w-2/4 mx-auto flex flex-col gap-3">
+            <form onSubmit={handleFormSubmit} action="" className="w-2/4 mx-auto flex flex-col gap-3 my-8">
 
 
                 <input required onChange={e => setName(e.target.value)} type="text" name="toyName" placeholder="Type toy's name here" className="input input-bordered w-full" />

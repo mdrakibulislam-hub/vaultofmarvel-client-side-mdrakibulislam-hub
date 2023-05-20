@@ -19,7 +19,7 @@ const AllProducts = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/alltoys")
+        fetch("https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys")
             .then(res => res.json())
             .then(data => { setProducts(data.slice(0, 19)); setLoading(false) })
     }, [])
@@ -28,7 +28,7 @@ const AllProducts = () => {
     const searchHandler = (event) => {
         event.preventDefault()
 
-        fetch(`http://localhost:5000/alltoys/search/${searchtext}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys/search/${searchtext}`)
             .then(res => res.json())
             .then(data => { setProducts(data), setLoading(false) })
 
@@ -36,7 +36,7 @@ const AllProducts = () => {
 
     const seeAllHandler = () => {
         setLoading(true)
-        fetch(`http://localhost:5000/alltoys`)
+        fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys`)
             .then(res => res.json())
             .then(data => { setProducts(data); setLoading(false) })
     }
