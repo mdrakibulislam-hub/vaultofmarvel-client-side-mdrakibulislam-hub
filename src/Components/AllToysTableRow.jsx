@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import DetailsModal from './DetailsModal';
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const AllToysTableRow = ({ product }) => {
+
+    useEffect(() => {
+
+        Aos.init();
+    }, [])
 
     const { _id, image, name, seller, email, subCategory, price, rating, quantity, description } = product;
 
 
     return (
         <>
-            <tr>
+            <tr data-aos="fade-up">
 
                 <td>
                     <div className="flex items-center space-x-3">

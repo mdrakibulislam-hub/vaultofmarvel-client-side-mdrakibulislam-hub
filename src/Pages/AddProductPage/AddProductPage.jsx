@@ -1,6 +1,7 @@
 import { Result } from "postcss";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddProductPage = () => {
 
@@ -43,7 +44,9 @@ const AddProductPage = () => {
         })
             .then(res => res.json())
             .then((result) => {
-                console.log(result);
+                if (result.insertedId) {
+                    toast.success(`Added to my products`);
+                }
 
             })
 
@@ -105,7 +108,7 @@ const AddProductPage = () => {
 
 
             </form>
-
+            <Toaster />
         </div >
     );
 };

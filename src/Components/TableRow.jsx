@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UpdateModal from './UpdateModal';
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 const TableRow = ({ product, control, setControl }) => {
+
+    useEffect(() => {
+
+        Aos.init();
+    }, [])
 
     const { _id, image, name, seller, email, subCategory, price, rating, quantity, description } = product;
 
@@ -17,7 +25,7 @@ const TableRow = ({ product, control, setControl }) => {
         })
             .then(res => res.json())
             .then((result) => {
-                console.log(result);
+                if (result.deletedCount > 0) { toast.error(`Product deleted`) }
                 setControl(!control)
 
             })
@@ -28,7 +36,7 @@ const TableRow = ({ product, control, setControl }) => {
 
         <>
 
-            <tr>
+            <tr data-aos="fade-up">
 
                 <td>
                     <div className="flex items-center space-x-3">
@@ -56,7 +64,7 @@ const TableRow = ({ product, control, setControl }) => {
 
 
             <UpdateModal _id={_id} productName={name} control={control} setControl={setControl}></UpdateModal>
-
+            <Toaster />
         </>
     );
 };

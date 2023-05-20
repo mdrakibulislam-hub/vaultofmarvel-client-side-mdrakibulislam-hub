@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const UpdateModal = ({ _id, productName, control, setControl }) => {
 
@@ -17,7 +18,10 @@ const UpdateModal = ({ _id, productName, control, setControl }) => {
             body: JSON.stringify(updateData)
         })
             .then(res => res.json())
-            .then(result => { console.log(result); setControl(!control) })
+            .then(result => {
+                if (result.modifiedCount > 0) { toast.success(`Details updated`); }
+                setControl(!control)
+            })
     }
 
     return (
@@ -47,6 +51,7 @@ const UpdateModal = ({ _id, productName, control, setControl }) => {
 
                 </label>
             </label>
+            <Toaster />
         </>
     );
 };
