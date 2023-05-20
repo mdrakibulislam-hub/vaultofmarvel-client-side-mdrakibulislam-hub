@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../../Components/ProductCard";
 import { FaSearch } from "react-icons/fa";
+import TableRow from "../../Components/TableRow";
+import AllToysTableRow from "../../Components/AllToysTableRow";
 
 
 const AllProducts = () => {
@@ -22,7 +24,6 @@ const AllProducts = () => {
 
     const searchHandler = (event) => {
         event.preventDefault()
-        console.log(searchtext);
 
         fetch(`http://localhost:5000/alltoys/search/${searchtext}`)
             .then(res => res.json())
@@ -50,9 +51,37 @@ const AllProducts = () => {
             </div>
 
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
+            {/* product showed on card format bellow */}
+            {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
                 {products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)}
-            </div>
+            </div> */}
+
+
+
+
+            {/* card showed on tabular format bellow */}
+
+            <table className="table w-full rounded-none">
+                {/* head */}
+                <thead>
+                    <tr>
+                        <th>Name & Price</th>
+                        <th>Category and Seller</th>
+                        <th>Quantity</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* row */}
+
+                    {products.map(product => <AllToysTableRow key={product._id} product={product}></AllToysTableRow>)}
+
+                </tbody>
+
+            </table>
+
+
+
         </div>
     );
 };
