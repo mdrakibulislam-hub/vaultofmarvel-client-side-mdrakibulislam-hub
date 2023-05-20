@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DetailsModal from './DetailsModal';
 
 const AllToysTableRow = ({ product }) => {
 
@@ -30,9 +31,12 @@ const AllToysTableRow = ({ product }) => {
                 </td>
                 <td><p>{quantity} pcs</p></td>
                 <th>
-                    <Link to={`/product/details/${_id}`}><button className="btn bg-warning text-black hover:text-white border-none btn-xs">Details</button></Link>
+                    {/* <Link to={`/product/details/${_id}`}><button className="btn bg-warning text-black hover:text-white border-none btn-xs">Details</button></Link> */}
+                    <><label htmlFor={`my-modal-${_id}`} className="btn bg-warning text-black hover:text-white border-none btn-xs">Details</label></>
                 </th>
             </tr>
+
+            <DetailsModal product={product}></DetailsModal>
         </>
     );
 };

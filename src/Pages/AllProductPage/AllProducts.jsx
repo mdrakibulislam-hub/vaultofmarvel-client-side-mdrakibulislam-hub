@@ -38,7 +38,7 @@ const AllProducts = () => {
         <div className="main-container">
 
 
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between flex-wrap my-4 items-center">
 
                 <h1 className="font-semibold text-4xl text-primary my-12">All product</h1>
 

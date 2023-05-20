@@ -9,11 +9,13 @@ import Registration from "../Pages/Registration/Registration";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import PrivetRoute from "./PrivetRoute";
 import MyToys from "../Pages/MyToysPage/MyToys";
+import ErrorElement from "../Components/ErrorElement";
 
 const router = createBrowserRouter([
     {
         "path": "/",
         element: <Main></Main>,
+        errorElement: <ErrorElement></ErrorElement>,
         children: [
             { "path": "/", element: <Home></Home> },
             { "path": "/product/details/:id", element: <PrivetRoute><ProductDetailsPage></ProductDetailsPage></PrivetRoute>, loader: (req, res) => fetch(`http://localhost:5000/alltoys/toys/${req.params.id}`) },
