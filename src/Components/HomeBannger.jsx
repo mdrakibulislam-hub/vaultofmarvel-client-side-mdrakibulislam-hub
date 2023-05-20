@@ -7,10 +7,6 @@ import { Link } from 'react-router-dom';
 
 const HomeBannger = () => {
 
-    useEffect(() => {
-        document.title = "Homepage | Vault of marvel";
-        Aos.init();
-    }, [])
 
     return (
         <div className='bg-black py-16'>

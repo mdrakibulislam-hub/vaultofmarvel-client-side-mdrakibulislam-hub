@@ -9,7 +9,9 @@ import HomeBannger from "../../Components/HomeBannger";
 
 const Home = () => {
 
-
+    useEffect(() => {
+        document.title = "Homepage | Vault of marvel";
+    }, [])
 
 
     return (
