@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import LoadingSpinner from "./LoadingSpinner";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const HomeProductTabs = () => {
 
@@ -11,10 +13,17 @@ const HomeProductTabs = () => {
     console.log(activeTab);
 
     useEffect(() => {
+
+        Aos.init();
+    }, [])
+
+    useEffect(() => {
         fetch(`http://localhost:5000/alltoys/subcatrgory/${activeTab}`)
             .then(res => res.json())
             .then(data => { setProducts(data); setLoading(false) })
     }, [activeTab])
+
+
 
 
     if (loading) { return (<LoadingSpinner></LoadingSpinner>) }
@@ -25,7 +34,8 @@ const HomeProductTabs = () => {
 
 
             <div className="grid place-content-center">
-                <div className="tabs">
+                <div data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom" className="tabs">
                     <span onClick={() => setActiveTab("gotg")} className={`tab tab-lg tab-lifted ${activeTab == "gotg" ? "tab-active" : ""}`}>Guardian of the galaxy</span>
                     <span onClick={() => setActiveTab("thor")} className={`tab tab-lg tab-lifted ${activeTab == "thor" ? "tab-active" : ""}`}>Thor</span>
                     <span onClick={() => setActiveTab("blackpanther")} className={`tab tab-lg tab-lifted ${activeTab == "blackpanther" ? "tab-active" : ""}`}>Black Panther</span>
@@ -34,7 +44,8 @@ const HomeProductTabs = () => {
             </div>
 
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
+            <div data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom" className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 my-8">
                 {products.map(product => <ProductCard key={product._id} product={product}></ProductCard>)}
             </div>
 
