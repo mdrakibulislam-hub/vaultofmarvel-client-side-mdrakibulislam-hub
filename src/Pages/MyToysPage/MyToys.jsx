@@ -15,7 +15,9 @@ const MyToys = () => {
 
     const [products, setProducts] = useState([]);
 
-    const { loading, user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+
+    const [loading, setLoading] = useState(true);
 
     const [control, setControl] = useState(true);
 
@@ -26,14 +28,15 @@ const MyToys = () => {
     useEffect(() => {
         fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys?email=${user.email}`)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => { setProducts(data); setLoading(false) })
     }, [user, control])
 
 
     const sortHandler = () => {
+        setLoading(true)
         fetch(`https://b7a11-toy-marketplace-server-side-mdrakibulislam-hub.vercel.app/alltoys?email=${user.email}&sort=true`)
             .then(res => res.json())
-            .then(data => { setProducts(data) })
+            .then(data => { setProducts(data); setLoading(false) })
     }
 
     if (loading) { return (<LoadingSpinner></LoadingSpinner>) }
