@@ -29,13 +29,20 @@ const MyToys = () => {
             .then(data => setProducts(data))
     }, [user, control])
 
+
+    const sortHandler = () => {
+        fetch(`http://localhost:5000/alltoys?email=${user.email}&sort=true`)
+            .then(res => res.json())
+            .then(data => { setProducts(data) })
+    }
+
     if (loading) { return (<LoadingSpinner></LoadingSpinner>) }
 
     return (
 
         <div className="overflow-x-auto main-container">
 
-            <button className='btn border-none bg-primary text-white hover:bg-warning hover:text-neutral mx-auto my-4'>Sort by Price</button>
+            <button onClick={sortHandler} className='btn border-none bg-primary text-white hover:bg-warning hover:text-neutral mx-auto my-4'>Sort by Price</button>
 
             <table className="table w-full rounded-none">
                 {/* head */}
